@@ -1,0 +1,44 @@
+body {
+    background-color: #122;
+}
+.preloader {
+    border: 1px DOTTED red;
+    width: 200px;
+    height: 200px;
+}
+
+.preloader .lg {
+    width: 200px;
+    height: 200px;
+    border: 5px solid #555;
+    border-top-color: transparent;
+    /* cu 9px offset din dreapta si de jos. intrucat parintele, .preloader are setat border de un 1px. 
+    Copilul, .lg o sa iasa in afara cu 9px, intrucat borderul lui de sus si jos constituie 10px in total, continutul lui, 
+    va omite pixelul de sus si din stanga al parintelui */
+
+    /* NEW -adjusts content, border, margin, padding, so it fits in the content of the box */
+    box-sizing: border-box;
+
+    border-radius: 100px;
+    /* NEW - linking the @keyframes */
+    animation: rot 3s 3 linear;
+}
+
+.preloader .sm {
+    border: 5px solid #999;
+    height: 150px;
+    width: 150px;
+    border-radius: 80px;
+    border-right-color: transparent;
+    transform: translate(15px,15px);
+    
+}
+/* NEW - animation / ad-rules */
+@keyframes rot {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
